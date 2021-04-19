@@ -34,11 +34,15 @@ class Parent extends Component {
         return(
             <div>
                 <p>I am the parent Component</p>
-                <Cars />
+                <Cars BestRides='Cars are cool' numbers='12345' coolCars={this.props.cars}/>
                 
             </div>
         );
     }
+}
+
+Parent.defaultProps = {
+    cars: ['Toyota', 'BMW', 'Audi']
 }
 
 class Cars extends Component {
@@ -46,6 +50,14 @@ class Cars extends Component {
         return(
             <div>
                 <p>I am the Cars Component</p>
+                <p>{ this.props.BestRides }</p>
+                <p>{ this.props.numbers }</p>
+                <p>{ this.props.coolCars.map((item, i) => {
+                    return " "+item
+                })
+                 }</p>
+
+                
             </div>
         );
     }
