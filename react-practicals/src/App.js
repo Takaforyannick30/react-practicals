@@ -19,12 +19,36 @@ class App extends Component {
                 >
                 Learn React
                 </a>
+                <Parent />
+
             </header>
             </div>
-    );
+        );
 
     }
   
+}
+
+class Parent extends Component {
+    render() {
+        return(
+            <div>
+                <p>I am the parent Component</p>
+                <Cars />
+                
+            </div>
+        );
+    }
+}
+
+class Cars extends Component {
+    render() {
+        return(
+            <div>
+                <p>I am the Cars Component</p>
+            </div>
+        );
+    }
 }
 
 export default App;
